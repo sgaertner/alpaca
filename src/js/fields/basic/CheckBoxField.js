@@ -238,7 +238,9 @@
 
                             for (var k in dataArray)
                             {
-                                $(self.getFieldEl()).find("input:checkbox[data-checkbox-value=\"" + dataArray[k] + "\"]").prop("checked", true);
+                                if (dataArray.hasOwnProperty(k)) {
+                                    $(self.getFieldEl()).find("input:checkbox[data-checkbox-value=\"" + dataArray[k] + "\"]").prop("checked", true);
+                                }
                             }
                         }
                     }
